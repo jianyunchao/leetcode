@@ -3,6 +3,7 @@ from typing import List
 
 class Solution:
     def dailyTemperatures_r(self, temperatures: List[int]) -> List[int]:
+        # 从右到左，下一个更大的数存在栈中
         s = []
         r = [None] * len(temperatures)
         for i in range(len(temperatures) - 1, -1, -1):
@@ -14,6 +15,7 @@ class Solution:
         return r
 
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        # 从左到右，栈里存储的数都没找到比自己大的数，直接遇到比他大，更新栈顶答案出栈
         s = []
         r = [0] * len(temperatures)
         for i in range(len(temperatures)):

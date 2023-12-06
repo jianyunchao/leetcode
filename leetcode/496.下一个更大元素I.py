@@ -26,9 +26,9 @@ class Solution(object):
         stack = []
         res_map = {}
         res = [0] * len(nums2)
-        # for num in reversed(nums2):
         for i in range(len(nums2) - 1, -1, -1):
-            while stack and stack[-1] <= nums2[i]:
+            num = nums2[i]  # 从右到左，每一次遍历都是结果，想象成山，中间矮的看不见
+            while stack and num >= stack[-1]:  # 单调性 + 先进先出
                 stack.pop()
             res_map[nums2[i]] = stack[-1] if stack else -1
             res[i] = stack[-1] if stack else -1
@@ -36,7 +36,7 @@ class Solution(object):
         return [res_map[n] for n in nums1]
 
 
-class Solution:
+# class Solution:
     def nextGreaterElement3(self, nums1: List[int], nums2: List[int]) -> List[int]:
         res = [0] * len(nums2)
         stack = []
@@ -47,7 +47,7 @@ class Solution:
         return [res[nums2.index(num)] for num in nums1]
 
 
-class Solution:
+# class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         res = {}
         stack = []

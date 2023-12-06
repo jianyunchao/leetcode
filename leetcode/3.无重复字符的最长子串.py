@@ -24,8 +24,6 @@ class Solution(object):
         return res
 
 
-
-
 if __name__ == '__main__':
     s = Solution()
     string = "abcabcbb"
