@@ -23,6 +23,16 @@ class Solution:
                 return True
         return False
 
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        # 哈希表
+        seen = set()
+        while head:
+            if head in seen:
+                return True
+            seen.add(head)
+            head = head.next
+        return False
+    
 
 if __name__ == '__main__':
     s = Solution()

@@ -8,6 +8,9 @@ class Solution:
         if ans <= 1:
             return 0
         product = 1
+        # l r
+        # [l, r] [l+1, r] ... [r, r]
+        # r - l + 1
         for right, x in enumerate(nums):
             product *= x
             while product >= k:
