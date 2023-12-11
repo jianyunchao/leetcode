@@ -14,6 +14,7 @@ class Solution(object):
 
     def backtrace(self, nums, start, stack, res):
         res.append(copy.deepcopy(stack))
+        # res.append(stack.copy())
 
         for i in range(start, len(nums)):
             stack.append(nums[i])
@@ -26,3 +27,5 @@ if __name__ == '__main__':
     s = Solution()
     nums = [1, 2, 3]
     print(s.subsets(nums))
+    # [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
+    # [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
